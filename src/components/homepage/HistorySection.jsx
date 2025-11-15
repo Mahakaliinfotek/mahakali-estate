@@ -97,11 +97,11 @@ export default function HistorySection() {
                         and all remarkable stories have an unassuming starting, a solid
                         center, and an animating finale. The history of Mahakali Udyog began
                         3 decades back, as a Coal Trading Company. The little stride taken by
-                        my son Mr. Rajesh Pagaria by implementing Imported Coal trading….
+                        my son Mr. Rajesh Pagaria by implementing Imported Coal trading
                     </Typography>
 
                     {/* Click to Read More */}
-                    <Typography
+                    {/* <Typography
                         sx={{
                             mt: 3,
                             display: "flex",
@@ -114,7 +114,7 @@ export default function HistorySection() {
                     >
                         Click to Read More
                         <ArrowForwardIcon fontSize="small" />
-                    </Typography>
+                    </Typography> */}
                 </Box>
             </Box>
         </Box>

@@ -48,7 +48,7 @@ export default function VisionSection() {
                 commodities and services, synonymous with trust & commitment worldwide.
             </Typography>
 
-            <Typography
+            {/* <Typography
                 sx={{
                     fontSize: 16,
                     opacity: 0.9,
@@ -62,7 +62,7 @@ export default function VisionSection() {
             >
                 Click to Read More
                 <ArrowForwardIcon fontSize="small" />
-            </Typography>
+            </Typography> */}
 
             {/* THREE CARDS */}
             <Box

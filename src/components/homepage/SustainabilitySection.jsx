@@ -5,8 +5,10 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import imgMain from "../../assets/images/sustainability/sus1.png";
 import imgSmall1 from "../../assets/images/sustainability/sus2.png";
 import imgSmall2 from "../../assets/images/sustainability/sus3.png";
+import { useNavigate } from "react-router-dom";
 
 export default function SustainabilitySection() {
+    const navigate = useNavigate();
     return (
         <Box
             sx={{
@@ -74,6 +76,7 @@ export default function SustainabilitySection() {
                                 cursor: "pointer",
                                 fontWeight: 500,
                             }}
+                            onClick={()=>navigate('/sustainability')}
                         >
                             Click to Read More
                             <ArrowForwardIcon fontSize="small" />

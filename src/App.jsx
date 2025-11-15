@@ -4,14 +4,23 @@ import { Route, Routes } from 'react-router-dom'
 
 import HomePage from './pages/Home'
 import { HomePageLayout } from './layouts/HomePageLayout'
+import LegacyLeadershipPage from './pages/LegacyLeadershipPage'
+import { Sustainability } from './pages/Sustainability'
+import ScrollToTop from './components/common/ScrollToTop'
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePageLayout />}>
-        <Route path="/" element={<HomePage />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePageLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/legacy-leadership" element={<LegacyLeadershipPage />} />
+          <Route path="/sustainability" element={<Sustainability />} />
+        </Route>
+      </Routes>
+    </>
+
   )
 }
 

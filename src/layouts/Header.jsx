@@ -15,6 +15,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 
+import logo from "../assets/me-logo.png"
+
 // Centralized Menu With Links
 const menuItems = [
     { label: "Our Story", path: "/our-story" },
@@ -22,7 +24,7 @@ const menuItems = [
     { label: "Sustainability", path: "/sustainability" },
 ];
 
-export default function Header() {
+export default function Header({ isDark = true }) {
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -30,6 +32,11 @@ export default function Header() {
         navigate(path);
         setOpen(false);
     };
+
+    // Dynamic color based on input prop
+    const textColor = isDark ? "white" : "#121212";
+    const iconColor = isDark ? "white" : "#121212";
+    const ctaBg = isDark ? "#0A2E3E" : "#004a63";
 
     return (
         <>
@@ -40,64 +47,83 @@ export default function Header() {
                     backgroundColor: "transparent",
                     boxShadow: "none",
                     px: { xs: 2, md: 6 },
+                    // maxWidth:"1600px"
                 }}
             >
-                <Toolbar sx={{ justifyContent: "space-between" }}>
-                    {/* Logo */}
-                    <Typography
-                        variant="h6"
-                        sx={{ fontWeight: 700, cursor: "pointer", color: "white" }}
-                        onClick={() => navigate("/")}
-                    >
-                        Logo
-                    </Typography>
+                <Box
+                    sx={{
+                        maxWidth: "1600px",
+                        mx: "auto",
+                        width: "100%",
+                        px: { xs: 2, md: 6 }, // inner padding
+                    }}
+                >
+                    <Toolbar sx={{ justifyContent: "space-between" }}>
+                        {/* Logo */}
+                        {/* <Typography
+                            variant="h6"
+                            sx={{ fontWeight: 700, cursor: "pointer", color: textColor }}
+                            onClick={() => navigate("/")}
+                        >
+                            Logo
+                        </Typography> */}
+                        <Box
+                          component="img"
+                          src={logo}
+                          sx={{
+                            width:"120px",
+                            cursor: "pointer"
+                          }}
+                          onClick={() => navigate("/")}
+                        />
 
-                    {/* Desktop Menu */}
-                    <Box
-                        sx={{
-                            display: { xs: "none", md: "flex" },
-                            gap: 4,
-                            alignItems: "center",
-                        }}
-                    >
-                        {menuItems.map((item) => (
-                            <Typography
-                                key={item.label}
-                                onClick={() => handleNavigate(item.path)}
-                                sx={{
-                                    color: "white",
-                                    fontSize: 16,
-                                    cursor: "pointer",
-                                    "&:hover": { opacity: 0.8 },
-                                }}
-                            >
-                                {item.label}
-                            </Typography>
-                        ))}
-
-                        {/* CTA Button */}
-                        <Button
-                            variant="contained"
-                            onClick={() => handleNavigate("/contact")}
+                        {/* Desktop Menu */}
+                        <Box
                             sx={{
-                                background: "#0A2E3E",
-                                textTransform: "none",
-                                fontWeight: 600,
-                                "&:hover": { background: "#08303b" },
+                                display: { xs: "none", md: "flex" },
+                                gap: 4,
+                                alignItems: "center",
                             }}
                         >
-                            Contact Us
-                        </Button>
-                    </Box>
+                            {menuItems.map((item) => (
+                                <Typography
+                                    key={item.label}
+                                    onClick={() => handleNavigate(item.path)}
+                                    sx={{
+                                        color: textColor,
+                                        fontSize: 16,
+                                        cursor: "pointer",
+                                        "&:hover": { opacity: 0.8 },
+                                    }}
+                                >
+                                    {item.label}
+                                </Typography>
+                            ))}
 
-                    {/* Mobile Menu Icon */}
-                    <IconButton
-                        sx={{ display: { xs: "flex", md: "none" }, color: "white" }}
-                        onClick={() => setOpen(true)}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                </Toolbar>
+                            {/* CTA Button */}
+                            <Button
+                                variant="contained"
+                                onClick={() => handleNavigate("/contact")}
+                                sx={{
+                                    background: ctaBg,
+                                    textTransform: "none",
+                                    fontWeight: 600,
+                                    "&:hover": { background: ctaBg },
+                                }}
+                            >
+                                Contact Us
+                            </Button>
+                        </Box>
+
+                        {/* Mobile Menu Icon */}
+                        <IconButton
+                            sx={{ display: { xs: "flex", md: "none" }, color: iconColor }}
+                            onClick={() => setOpen(true)}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                    </Toolbar>
+                </Box>
             </AppBar>
 
             {/* Mobile Drawer */}

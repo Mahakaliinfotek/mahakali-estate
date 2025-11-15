@@ -183,7 +183,7 @@ export default function BusinessesSection() {
                             </Typography>
 
                             {/* Read More */}
-                            <Typography
+                            {/* <Typography
                                 sx={{
                                     mt: 1,
                                     display: "flex",
@@ -195,7 +195,7 @@ export default function BusinessesSection() {
                             >
                                 Click to Read More
                                 <ArrowForwardIcon sx={{ fontSize: 16 }} />
-                            </Typography>
+                            </Typography> */}
                         </Box>
                     </Box>
                 ))}

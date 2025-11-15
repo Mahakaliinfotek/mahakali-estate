@@ -27,7 +27,7 @@ export const HomePageLayout = () => {
                     py: { xs: 0, sm: "16px", md: 0 },
                 }}
             >   
-                <Header />
+                {/* <Header /> */}
                 <Outlet />
             </Box>
 

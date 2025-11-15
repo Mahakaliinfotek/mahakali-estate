@@ -16,7 +16,7 @@ import Header from "../layouts/Header";
 const HomePage = () => {
     return (
         <>
-            {/* <Header /> */}
+            <Header isDark={true} />
             <HeroSlider />
             <CompanyStrip/>
             <AboutMahakaliEstate />

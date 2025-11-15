@@ -11,6 +11,7 @@ import pc1 from "../../assets/images/peopleCulture/pc1.webp";
 import pc2 from "../../assets/images/peopleCulture/pc2.webp";
 import pc3 from "../../assets/images/peopleCulture/pc3.webp";
 import pc4 from "../../assets/images/peopleCulture/pc4.webp";
+import { useNavigate } from "react-router-dom";
 
 export default function PeopleCultureSlider() {
     const items = [
@@ -35,6 +36,8 @@ export default function PeopleCultureSlider() {
             text: "We believe in learning by doing. Our approach...",
         },
     ];
+
+    const navigate= useNavigate();
 
     return (
         <Box>
@@ -97,6 +100,7 @@ export default function PeopleCultureSlider() {
                         0: { slidesPerView: 1 },
                         900: { slidesPerView: 2 },
                     }}
+
                 >
                     {items.map((item, index) => (
                         <SwiperSlide key={index}>
@@ -108,6 +112,7 @@ export default function PeopleCultureSlider() {
                                     overflow: "hidden",
                                     cursor: "pointer",
                                 }}
+                                onClick={()=>navigate("/legacy-leadership")}
                             >
                                 {/* Background Image */}
                                 <Box
