@@ -7,18 +7,19 @@ import mupl from "../../assets/images/companyStrip/mupl.png";
 import oto from "../../assets/images/companyStrip/oto.png";
 import rp from "../../assets/images/companyStrip/rp.png";
 import rse from "../../assets/images/companyStrip/rse.png";
+import minter from "../../assets/images/companyStrip/minter.png";
 
 export default function CompanyStrip() {
     const items = [
         { logo: indiazona, link: "https://indiazona.com" },
         { logo: me, link: "https://mahakali.com" },
-        { logo: mun, link: "https://nurani.com" },
+        { logo: mun, link: "https://munminmet.om" },
         { logo: mupl, link: "https://nurani.com" },
         { logo: rse, link: "https://ransanenterprises.com" },
         { logo: oto, link: "https://oto.com" },
         { logo: mi, link: "https://muinoman.com" },
         { logo: rp, link: "https://kr.com" },
-        // { logo: indiazona, link: "https://indiazona.com" },
+        { logo: minter, link: "https://www.mahakaliinternational.com/"},
     ];
 
     const loopItems = [...items, ...items]; // Duplicate for infinite loop

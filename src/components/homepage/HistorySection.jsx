@@ -4,8 +4,10 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 // Replace this with your background + inside image
 import historyBg from "../../assets/images/history/historybg.png";
 import historyImg from "../../assets/images/history/history.png";
+import { useNavigate } from "react-router-dom";
 
 export default function HistorySection() {
+    const navigate= useNavigate();
     return (
         <Box
             sx={{
@@ -37,7 +39,7 @@ export default function HistorySection() {
                     opacity: 0.9,
                 }}
             >
-                A journey built on vision, values, and continuous evolution.
+                From One Desk in Kolkata to a Global Resource Network
             </Typography>
 
             {/* Content Box */}
@@ -48,7 +50,7 @@ export default function HistorySection() {
                     justifyContent: "center",
                     alignItems: "stretch",
                     width: "100%",
-                    maxWidth: 1200,
+                    maxWidth: 1000,
                     mx: "auto",
                     background: "rgba(0,0,0,0.0)",
                 }}
@@ -91,17 +93,11 @@ export default function HistorySection() {
                             opacity: 0.95,
                         }}
                     >
-                        In the year 1984, Sri Ranjit Singh Pagaria, founded this Business
-                        with a table space office at Kolkata and the journey started
-                        thereof. The journey of a thousand miles starts with a single stride,
-                        and all remarkable stories have an unassuming starting, a solid
-                        center, and an animating finale. The history of Mahakali Udyog began
-                        3 decades back, as a Coal Trading Company. The little stride taken by
-                        my son Mr. Rajesh Pagaria by implementing Imported Coal trading
+                        What began in 1984 with a small trading desk is now a diversified group operating across mining, logistics, imports, exports, and digital commerce. For four decades, we’ve expanded from India’s eastern coal belt to global mineral hubs, combining traditional expertise with next-gen platforms like Indiazona.
                     </Typography>
 
                     {/* Click to Read More */}
-                    {/* <Typography
+                    <Typography
                         sx={{
                             mt: 3,
                             display: "flex",
@@ -111,10 +107,11 @@ export default function HistorySection() {
                             fontWeight: 500,
                             cursor: "pointer",
                         }}
+                        onClick={()=>navigate('/about-us')}
                     >
                         Click to Read More
                         <ArrowForwardIcon fontSize="small" />
-                    </Typography> */}
+                    </Typography>
                 </Box>
             </Box>
         </Box>

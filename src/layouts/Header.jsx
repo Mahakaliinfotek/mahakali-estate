@@ -19,7 +19,7 @@ import logo from "../assets/me-logo.png"
 
 // Centralized Menu With Links
 const menuItems = [
-    { label: "Our Story", path: "/our-story" },
+    { label: "Our Story", path: "/story" },
     { label: "Businesses", path: "/businesses" },
     { label: "Sustainability", path: "/sustainability" },
 ];
