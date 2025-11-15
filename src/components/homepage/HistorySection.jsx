@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 // Replace this with your background + inside image
-import historyBg from "../../assets/images/history/historyBg.png";
+import historyBg from "../../assets/images/history/historybg.png";
 import historyImg from "../../assets/images/history/history.png";
 
 export default function HistorySection() {
