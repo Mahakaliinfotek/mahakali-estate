@@ -29,9 +29,24 @@ export default function Header({ isDark = true }) {
     const navigate = useNavigate();
 
     const handleNavigate = (path) => {
-        navigate(path);
-        setOpen(false);
-    };
+    if (path === "/businesses") {
+        if (window.location.pathname === "/") {
+            // Already on homepage → scroll only
+            document.getElementById("businesses-section")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        } else {
+            // Navigate to homepage → then scroll after load
+            navigate("/", { state: { scrollTo: "businesses-section" } });
+        }
+        return;
+    }
+
+    // Default navigation
+    navigate(path);
+    setOpen(false);
+};
 
     // Dynamic color based on input prop
     const textColor = isDark ? "white" : "#121212";
@@ -46,7 +61,7 @@ export default function Header({ isDark = true }) {
                 sx={{
                     backgroundColor: "transparent",
                     boxShadow: "none",
-                    px: { xs: 2, md: 6 },
+                    px: { xs: 1, md: 6 },
                     // maxWidth:"1600px"
                 }}
             >
@@ -103,7 +118,8 @@ export default function Header({ isDark = true }) {
                             {/* CTA Button */}
                             <Button
                                 variant="contained"
-                                onClick={() => handleNavigate("/contact")}
+                                component="a"
+                                href={`mailto:info@mahakaliudyog.com`}
                                 sx={{
                                     background: ctaBg,
                                     textTransform: "none",

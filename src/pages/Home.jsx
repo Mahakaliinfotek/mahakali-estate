@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import CompanyStrip from "../components/common/CompanyStrip";
 import HeroSlider from "../components/common/HeroSlider";
 import AboutMahakaliEstate from "../components/homepage/AboutMahakaliEstate";
@@ -12,8 +13,21 @@ import SustainabilitySection from "../components/homepage/SustainabilitySection"
 import VisionSection from "../components/homepage/VisionSection";
 import WhatWeBuild from "../components/homepage/WhatWeBuild";
 import Header from "../layouts/Header";
+import { useEffect } from "react";
 
 const HomePage = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state?.scrollTo) {
+            const el = document.getElementById(location.state.scrollTo);
+            if (el) {
+                setTimeout(() => {
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }, 200);
+            }
+        }
+    }, [location]);
     return (
         <>
             <Header isDark={true} />
