@@ -34,11 +34,13 @@ export default function CultureSection() {
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
         gap: { xs: 6, md: 8 },
-        alignItems: { xs: "flex-start", md: "center" },
+        alignItems: { xs: "center", md: "center" },
+        justifyContent:'center'
       }}
+      
     >
       {/* ---------------- LEFT TEXT ---------------- */}
-      <Box sx={{ flex: 1, minWidth: 0 }}>
+      <Box sx={{ flex: 1, minWidth: 0,display: "flex",alignItems: "center",justifyContent:'center',flexDirection:"column",textAlign:"center"}} >
         <Typography
           sx={{
             fontSize: { xs: "32px", md: "42px" },
@@ -46,54 +48,15 @@ export default function CultureSection() {
             lineHeight: 1.1,
             mb: 2,
             color: "#1B1B1B",
+            
           }}
         >
-          A Culture of<br />Hands–On<br />Excellence
+          A Culture of Hands–On<br />Excellence
         </Typography>
 
-        <Typography sx={{ fontSize: "16px", color: "#4B4B4B", maxWidth: "500px" }}>
+        <Typography sx={{ fontSize: "16px", color: "#4B4B4B",maxWidth: "800px",}}>
           We believe in learning by doing. Our approach to professional development centers on hands-on experience where theories meet reality and skills are forged through practice. This is where experience meets fresh perspective. Some of our colleagues have been with us for over two decades, carrying institutional wisdom and technical mastery. Alongside them, we continuously welcome new talented individuals who bring contemporary thinking and unbridled energy. This generational blend creates a dynamic learning ecosystem where industry veterans mentor rising talent, ensuring that excellence is both preserved and reimagined for tomorrow.
         </Typography>
-      </Box>
-
-      {/* ---------------- RIGHT MEMBERS ---------------- */}
-      <Box
-        sx={{
-          flex: 1.2,
-          display: "flex",
-          flexWrap: "wrap",
-          rowGap: 4,
-          columnGap: 3,
-          justifyContent: { xs: "center", md: "flex-end" },
-        }}
-      >
-        {team.map((p, index) => (
-          <Box
-            key={index}
-            sx={{
-              width: "150px",
-              textAlign: "center",
-            }}
-          >
-            <Box
-              component="img"
-              src={p.img}
-              alt={p.name}
-              sx={{
-                width: "110px",
-                height: "110px",
-                borderRadius: "50%",
-                objectFit: "cover",
-                mx: "auto",
-                mb: 1.5,
-              }}
-            />
-            <Typography sx={{ fontWeight: 700 }}>{p.name}</Typography>
-            <Typography sx={{ color: "#008037", fontWeight: 700, fontSize: "15px" }}>
-              {p.years}
-            </Typography>
-          </Box>
-        ))}
       </Box>
     </Box>
   );

@@ -29,6 +29,7 @@ export default function ImpactAtAGlance() {
                 px: { xs: 2, md: 4 },
                 py: { xs: 6, md: 2 },
                 textAlign: "center",
+                mb:5
             }}
         >
             {/* Heading */}

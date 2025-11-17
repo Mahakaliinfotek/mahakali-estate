@@ -15,7 +15,7 @@ export const Sustainability = () => {
             <PrinciplesSection/>
             <WhatWeDo />
             <ImpactAtAGlance />
-            <PartnerWithUs />
+            {/* <PartnerWithUs /> */}
         </Box>
     )
 }
