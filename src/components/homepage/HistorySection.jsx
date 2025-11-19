@@ -7,7 +7,7 @@ import historyImg from "../../assets/images/history/history.png";
 import { useNavigate } from "react-router-dom";
 
 export default function HistorySection() {
-    const navigate= useNavigate();
+    const navigate=useNavigate();
     return (
         <Box
             sx={{
@@ -39,7 +39,7 @@ export default function HistorySection() {
                     opacity: 0.9,
                 }}
             >
-                From One Desk in Kolkata to a Global Resource Network
+                A journey built on vision, values, and continuous evolution.
             </Typography>
 
             {/* Content Box */}
@@ -71,19 +71,27 @@ export default function HistorySection() {
                     sx={{
                         flex: 1,
                         background: "#00445B",
-                        p: { xs: 3, md: 4 },
-                        textAlign: "left",
+                        px: { xs: 3, md: 5 },
+                        py: { xs: 3, md: 4 },
+                        textAlign: "center",
                         color: "#fff",
+                        display:"flex",
+                        justifyContent:"space-between",
+                        alignItems:"center",
+                        flexDirection:"column"
                     }}
+                    // border={1}
                 >
                     <Typography
                         sx={{
                             fontWeight: 700,
                             fontSize: 20,
                             mb: 1.5,
+                            maxWidth:"300px",
+                            
                         }}
                     >
-                        About Mahakali Udyog Pvt. Ltd.
+                        From One Desk in Kolkata to a Global Resource Network
                     </Typography>
 
                     <Typography
@@ -91,9 +99,12 @@ export default function HistorySection() {
                             fontSize: 15,
                             lineHeight: 1.6,
                             opacity: 0.95,
+                            textAlign:"left"
                         }}
                     >
-                        What began in 1984 with a small trading desk is now a diversified group operating across mining, logistics, imports, exports, and digital commerce. For four decades, we’ve expanded from India’s eastern coal belt to global mineral hubs, combining traditional expertise with next-gen platforms like Indiazona.
+                        What began in <b>1984</b> as a humble trading firm is now a diversified conglomerate operating across mining, logistics, imports, exports, and digital commerce.For <b>four decades</b>, we’ve expanded from India’s eastern coal belt to global mineral hubs, combining traditional expertise with next-gen platforms like Indiazona.
+
+
                     </Typography>
 
                     {/* Click to Read More */}
@@ -103,13 +114,14 @@ export default function HistorySection() {
                             display: "flex",
                             alignItems: "center",
                             gap: 1,
-                            fontSize: 15,
-                            fontWeight: 500,
+                            fontSize: 18,
+                            // fontWeight: 500,
                             cursor: "pointer",
                         }}
-                        onClick={()=>navigate('/about-us')}
+
+                        onClick={() => navigate("/about-us")}
                     >
-                        Click to Read More
+                        Discover Our Journey
                         <ArrowForwardIcon fontSize="small" />
                     </Typography>
                 </Box>
