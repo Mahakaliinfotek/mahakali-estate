@@ -36,8 +36,8 @@ const HomePage = () => {
             <AboutMahakaliEstate />
             <WhatWeBuild/>
             <SustainabilityInPractice />
-            <GovernanceSection/>
-            <PartnerWithUsSection/>
+            {/* <GovernanceSection/> */}
+            {/* <PartnerWithUsSection/> */}
             <PeopleCultureSlider/>
             <VisionSection/>
             <BusinessesSection/>

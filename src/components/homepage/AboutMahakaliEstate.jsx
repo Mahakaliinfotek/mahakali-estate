@@ -9,7 +9,7 @@ export default function AboutMahakaliEstate() {
       sx={{
         width: "100%",
         px: { xs: 2, md: 6 },
-        py: { xs: 8, md: 12 },
+        py: { xs: 8, md: 5 },
         bgcolor: "#F9F9F7",
         display: "flex",
         flexDirection: { xs: "column", md: "row" },

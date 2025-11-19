@@ -17,16 +17,17 @@ const config = {
 
     corporateOffice: {
         title: "Corporate Office",
-        address: `Door No. 43-4-12/1, 2nd Floor, Vyshnavi Magnum Opp. Indian Oil,
-Dondaparthy, Railway New Colony, Visakhapatnam – 530016,
-Andhra Pradesh, India`,
+        address: `43-4-12/1, 2nd Floor,
+        Vyshnovi Magnum, Opp. Indian Oil,
+        Dondaparthy, Railway New Colony,
+        Visakhapatnam, Andhra Pradesh, India.`,
         phone: "0891-2539553",
     },
 
     headOffice: {
         title: "Head Office",
         address: `11, Clive Row, 4th Floor,
-Kolkata – 700001`,
+        Kolkata – 700001`,
         phone: "033 40067940",
     },
 

@@ -6,22 +6,10 @@ import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlin
 
 export default function WhatWeBuild() {
   const items = [
-    {
-      icon: LandscapeOutlinedIcon,
-      label: "Land and Sites",
-    },
-    {
-      icon: WarehouseOutlinedIcon,
-      label: "Industrial & Logistics Assets",
-    },
-    {
-      icon: LocationCityOutlinedIcon,
-      label: "Business Centres",
-    },
-    {
-      icon: ManageAccountsOutlinedIcon,
-      label: "Leasing & Asset Management",
-    },
+    { icon: LandscapeOutlinedIcon, label: "Land and Sites" },
+    { icon: WarehouseOutlinedIcon, label: "Industrial & Logistics Assets" },
+    { icon: LocationCityOutlinedIcon, label: "Business Centres" },
+    { icon: ManageAccountsOutlinedIcon, label: "Leasing & Asset Management" },
   ];
 
   return (
@@ -29,12 +17,12 @@ export default function WhatWeBuild() {
       sx={{
         width: "100%",
         px: { xs: 2, md: 6 },
-        py: { xs: 8, md: 12 },
+        pb: 5,
         bgcolor: "#F9F9F7",
         textAlign: "center",
       }}
     >
-      {/* ---------------- TITLE ---------------- */}
+      {/* Title */}
       <Typography
         sx={{
           fontSize: { xs: "28px", md: "36px" },
@@ -45,7 +33,6 @@ export default function WhatWeBuild() {
         What We Build
       </Typography>
 
-      {/* Underline */}
       <Box
         sx={{
           width: "120px",
@@ -58,7 +45,7 @@ export default function WhatWeBuild() {
         }}
       />
 
-      {/* ---------------- BOXES ---------------- */}
+      {/* Cards */}
       <Box
         sx={{
           display: "flex",
@@ -68,43 +55,44 @@ export default function WhatWeBuild() {
           alignItems: "center",
         }}
       >
-        {items.map((item, index) => (
-          <Box
-            key={index}
-            sx={{
-              flex: 1,
-              minWidth: { xs: "100%", sm: "260px" },
-              maxWidth: "280px",
-              background: "white",
-              border: "1px solid #E5ECE8",
-              borderRadius: "12px",
-              p: 4,
-              textAlign: "center",
-              transition: "0.2s",
-              "&:hover": {
-                borderColor: "#0A7A42",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-              },
-            }}
-          >
-            {/* Icon */}
+        {items.map((item, index) => {
+          const Icon = item.icon;
+          return (
             <Box
-              className="material-symbols-outlined"
+              key={index}
               sx={{
-                fontSize: "40px",
-                color: "#0A7A42",
-                mb: 2,
+                flex: 1,
+                minWidth: { xs: "100%", sm: "260px" },
+                maxWidth: "280px",
+                height: "220px", // FIXED HEIGHT
+                background: "white",
+                border: "1px solid #E5ECE8",
+                borderRadius: "12px",
+                p: 4,
+                textAlign: "center",
+                transition: "all 0.3s ease",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+
+                "&:hover": {
+                  borderColor: "#0A7A42",
+                  transform: "translateY(-6px)", // HOVER LIFT
+                  boxShadow: "0 8px 20px rgba(0,0,0,0.12)",
+                },
               }}
             >
-              <item.icon sx={{fontSize:"40px"}} />
-            </Box>
+              <Icon sx={{ fontSize: "40px", color: "#0A7A42", mb: 2 }} />
 
-            {/* Label */}
-            <Typography sx={{ fontWeight: 700, fontSize: "16px", color: "#222" }}>
-              {item.label}
-            </Typography>
-          </Box>
-        ))}
+              <Typography
+                sx={{ fontWeight: 700, fontSize: "16px", color: "#222" }}
+              >
+                {item.label}
+              </Typography>
+            </Box>
+          );
+        })}
       </Box>
     </Box>
   );
